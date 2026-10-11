@@ -1,0 +1,86 @@
+	{
+    "layer": "top",
+    "position": "top",
+    "height": 42,
+    "spacing": 8,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray",
+	"custom/showcase",
+	"custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 40,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M  %d/%m}",
+        "tooltip-format": "{:%A, %d de %B de %Y}",
+        "interval": 60
+    },
+
+    "network": {
+        "format-wifi": "Wi-Fi {signalStrength}%",
+        "format-ethernet": "ETH",
+        "format-disconnected": "Sem rede",
+        "tooltip": true,
+        "interval": 5
+    },
+
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "VOL MUTE",
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "battery": {
+        "format": "BAT {capacity}%",
+        "format-charging": "BAT {capacity}% +",
+        "format-full": "BAT 100%",
+        "format-warning": "BAT {capacity}% !",
+        "states": {
+            "warning": 25
+        },
+        "interval": 30
+    },
+
+    "tray": {
+        "spacing": 8
+    },
+
+    "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Menu de energia",
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+}
+,
+"custom/showcase": {
+    "format": "󰐊 SHOWCASE",
+    "tooltip": true,
+    "tooltip-format": "Abrir o showcase do rice",
+    "on-click": "~/.config/waybar/scripts/showcase.sh"
+}
+}
